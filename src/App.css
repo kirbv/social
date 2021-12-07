@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    background-color: #98a4da;
+    color: white;
+}
+.Wrapp {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+        "Head Head"
+        "Navb Profile";
+    grid-gap: 10px;
+    grid-template-columns: 2fr 10fr;
+}
+.Wrapp div {
+    background-color: rgb(70, 79, 121);
+    border-radius: 10px;
+}
+.Header {
+    grid-area: Head;
+}
+.Navbar {
+    grid-area: Navb;
+}
+.Profile {
+    grid-area: Profile;
+}
+.Navbar {
+    text-align: center;
+}

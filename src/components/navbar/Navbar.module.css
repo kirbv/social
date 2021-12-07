@@ -1,0 +1,10 @@
+.link {
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+.link:hover {
+    background-color: #fff9;
+}
