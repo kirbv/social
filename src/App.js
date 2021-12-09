@@ -9,7 +9,7 @@ function App() {
     <div className="Wrapp">
     <Header/>
     <Navbar/>
-    <Profile/>
+    <Profile name="Илон Маск"/>
     </div>
   );
 }
