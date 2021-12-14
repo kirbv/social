@@ -1,0 +1,16 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+.peoples,
+.messages {
+    padding: 10px;
+}
+.peoples a {
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+.peoples a.active {
+    color: black;
+}

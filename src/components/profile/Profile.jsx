@@ -7,7 +7,11 @@ function Profile(props){
         <div className="Profile">
             <div className={classes.me}>
                 <img src={ava} alt="Profile photo" />
-                <p>{props.name}</p>
+                <div>
+                    <p>{props.name}</p>
+                    <p>{props.status}</p>
+                    <p>{props.livePlace}</p>
+                </div>
             </div>
             <Posts/>
         </div>

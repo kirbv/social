@@ -1,11 +1,12 @@
 import React from "react"
 import classes from "./Navbar.module.css"
+import {NavLink} from "react-router-dom"
 function Navbar(){
     return(
         <div className="Navbar">
-            <a href="" className={classes.link}>Профиль</a>
-            <a href="" className={classes.link}>Сообщения</a>
-            <a href="" className={classes.link}>Пользователи</a>
+            <NavLink to="/profile" className={classes.link}>Профиль</NavLink>
+            <NavLink to="/dialogs" className={classes.link}>Сообщения</NavLink>
+            <NavLink to="/users" className={classes.link}>Пользователи</NavLink>
         </div>
     )
 }
