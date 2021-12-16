@@ -13,7 +13,7 @@ function App() {
       <Navbar/>
       <div>
         <Routes>
-        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/profile" element={<Profile name="Илон Маск" status="Богатый" livePlace="Америка"/>}/>
         <Route path="/dialogs" element={<Dialogs/>}/>
         </Routes>
       </div>
