@@ -13,7 +13,7 @@ function Profile(props){
                     <p>{props.livePlace}</p>
                 </div>
             </div>
-            <Posts/>
+            <Posts postsData={props.profilePage.postsData}/>
         </div>
     )
 }
