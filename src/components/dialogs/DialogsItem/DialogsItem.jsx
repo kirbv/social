@@ -1,5 +1,4 @@
 import React from "react"
-import classes from "./DialogsItem.module.css"
 import {NavLink} from "react-router-dom"
 function DialogsItem(props){
     return(

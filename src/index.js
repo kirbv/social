@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import state from './data/state';
+import state, { addPost } from './data/state';
 ReactDOM.render(
   <BrowserRouter>
-    <App state={state}/>
+    <App state={state} addPost={addPost}/>
   </BrowserRouter>,
   document.getElementById('root')
 );

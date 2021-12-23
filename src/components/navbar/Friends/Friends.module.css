@@ -1,0 +1,15 @@
+.friends {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+img {
+    width: 100%;
+}
+.friend {
+    width: 30%;
+}
+.friend:hover {
+    background-color: #98a4da;
+    cursor: pointer;
+}

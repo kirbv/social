@@ -10,10 +10,10 @@ function App(props) {
   return (
     <div className="Wrapp">
       <Header/>
-      <Navbar/>
+      <Navbar navbarPage={props.state.navbarPage}/>
       <div>
         <Routes>
-        <Route path="/profile" element={<Profile profilePage={props.state.profilePage} name="Илон Маск" status="Богатый" livePlace="Америка"/>}/>
+        <Route path="/profile" element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} name="Илон Маск" status="Богатый" livePlace="Америка"/>}/>
         <Route path="/dialogs" element={<Dialogs dialogsPage={props.state.dialogsPage}/>}/>
         </Routes>
       </div>

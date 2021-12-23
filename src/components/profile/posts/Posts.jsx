@@ -2,12 +2,16 @@ import React from "react"
 import classes from "./Posts.module.css"
 import Post from "./post/Post"
 function Posts(props){
+    let postText=React.createRef()
+    let addPost=()=>{
+        props.addPost(postText.current.value)
+    }
     return(
         <div className={classes.posts}>
-                <input type="text" placeholder="Введите пост"/>
-                <button>Добавить пост</button>
+                <input type="text" placeholder="Введите пост" ref={postText}/>
+                <button onClick={addPost}>Добавить пост</button>
                 {props.postsData.map((item)=>{
-                    return <Post postText={item.text}/>
+                    return <Post postText={item.text} key={item.id}/>
                 })}
             </div>
     )

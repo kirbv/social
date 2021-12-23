@@ -6,14 +6,14 @@ function Profile(props){
     return(
         <div className="Profile">
             <div className={classes.me}>
-                <img src={ava} alt="Profile photo" />
+                <img src={ava} alt="Profile pic" />
                 <div>
                     <p>{props.name}</p>
                     <p>{props.status}</p>
                     <p>{props.livePlace}</p>
                 </div>
             </div>
-            <Posts postsData={props.profilePage.postsData}/>
+            <Posts postsData={props.profilePage.postsData} addPost={props.addPost}/>
         </div>
     )
 }
