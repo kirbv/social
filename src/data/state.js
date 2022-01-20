@@ -1,7 +1,7 @@
 import Bill from "../img/Bill.jpg"
 import Zuck from "../img/Cuck.jpg"
 import Trump from "../img/Tr.jpg"
-import {rerenderTree} from "../render"
+
 let state={
     profilePage:{
         postsData:[
@@ -10,7 +10,7 @@ let state={
             {text:"Какое настроение?", id:3},
             {text:"Что делаете?", id:4}
         ],
-        newPostText:"Hello"
+        newPostText:""
 
     },
     dialogsPage:{
@@ -47,5 +47,11 @@ export let addMessage=(messageText)=>{
 export let onPostChange=(text)=>{
     state.profilePage.newPostText=text
     rerenderTree(state)
+}
+let rerenderTree=()=>{
+    console.log("Hello");
+}
+export let subscribe=(observer)=>{
+    rerenderTree=observer
 }
 export default state
