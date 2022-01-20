@@ -1,6 +1,7 @@
 import Bill from "../img/Bill.jpg"
 import Zuck from "../img/Cuck.jpg"
 import Trump from "../img/Tr.jpg"
+import {rerenderTree} from "../render"
 let state={
     profilePage:{
         postsData:[
@@ -8,7 +9,9 @@ let state={
             {text:"Как дела?", id:2},
             {text:"Какое настроение?", id:3},
             {text:"Что делаете?", id:4}
-        ]
+        ],
+        newPostText:"Hello"
+
     },
     dialogsPage:{
         dialogsNames:[
@@ -31,7 +34,18 @@ let state={
 }
 export let addPost=(postText)=>{
     let newPost={text:postText, id:5}
-    state.profilePage.postsData.push(newPost)
+    state.profilePage.postsData.unshift(newPost)
+    state.profilePage.newPostText=""
+    rerenderTree(state)
+}
+export let addMessage=(messageText)=>{
+    let newMessage={mes:messageText, id:3}
+    state.dialogsPage.messagesData.push(newMessage)
     console.log(state);
+    rerenderTree(state)
+}
+export let onPostChange=(text)=>{
+    state.profilePage.newPostText=text
+    rerenderTree(state)
 }
 export default state
