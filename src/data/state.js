@@ -1,8 +1,12 @@
 import Bill from "../img/Bill.jpg"
 import Zuck from "../img/Cuck.jpg"
 import Trump from "../img/Tr.jpg"
+import messageReducer from "./messageReducer"
+import profileReducer from "./profileReducer"
+let store={
 
-let state={
+
+ _state:{
     profilePage:{
         postsData:[
             {text:"Привет всем!", id:1},
@@ -22,7 +26,8 @@ let state={
         messagesData:[
             {mes:"Привет, как дела?", id:1},
             {mes:"Что ты делаешь?", id:2}
-        ]
+        ], 
+        newMessageText:""
     },
     navbarPage:{
         friendsData:[
@@ -31,27 +36,21 @@ let state={
             {name:"Трамп", img:Trump, id:3}
         ]
     }
-}
-export let addPost=(postText)=>{
-    let newPost={text:postText, id:5}
-    state.profilePage.postsData.unshift(newPost)
-    state.profilePage.newPostText=""
-    rerenderTree(state)
-}
-export let addMessage=(messageText)=>{
-    let newMessage={mes:messageText, id:3}
-    state.dialogsPage.messagesData.push(newMessage)
-    console.log(state);
-    rerenderTree(state)
-}
-export let onPostChange=(text)=>{
-    state.profilePage.newPostText=text
-    rerenderTree(state)
-}
-let rerenderTree=()=>{
+},
+dispatch(action){
+    this._state.profilePage=profileReducer(this._state.profilePage,action)
+    this.rerenderTree(this._state)
+    this._state.dialogsPage=messageReducer(this._state.dialogsPage,action)
+    this.rerenderTree(this._state)
+},
+rerenderTree(){
     console.log("Hello");
+},
+ subscribe(observer){
+    this.rerenderTree=observer
+},
+getState(){
+    return this._state
 }
-export let subscribe=(observer)=>{
-    rerenderTree=observer
 }
-export default state
+export default store

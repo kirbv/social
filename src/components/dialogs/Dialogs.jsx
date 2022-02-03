@@ -1,12 +1,16 @@
 import React from "react"
+import { mesChangeAC, newMesAC } from "../../data/messageReducer"
 import classes from "./Dialogs.module.css"
 import DialogsItem from "./DialogsItem/DialogsItem"
 import Message from "./message/Message"
 function Dialogs(props){
     let messageText=React.createRef()
     let addMessage=()=>{
-        props.addMessage(messageText.current.value);
+        props.dispatch(newMesAC());
         messageText.current.value=""
+    }
+    let onMessageChange=()=>{
+        props.dispatch(mesChangeAC(messageText.current.value))
     }
     return(
         <div className={classes.dialogs}>
@@ -19,7 +23,7 @@ function Dialogs(props){
                 {props.dialogsPage.messagesData.map((item)=>{
                     return <Message messageText={item.mes}/>
                 })}
-                <textarea ref={messageText}>
+                <textarea ref={messageText} value={props.newMessageText} onChange={onMessageChange}>
                     
                 </textarea>
                 <button onClick={addMessage}>Отправить</button>

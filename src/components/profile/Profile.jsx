@@ -13,7 +13,7 @@ function Profile(props){
                     <p>{props.livePlace}</p>
                 </div>
             </div>
-            <Posts postsData={props.profilePage.postsData} addPost={props.addPost} newPostText={props.newPostText} onPostChange={props.onPostChange}/>
+            <Posts postsData={props.profilePage.postsData} dispatch={props.dispatch} newPostText={props.newPostText}/>
         </div>
     )
 }
